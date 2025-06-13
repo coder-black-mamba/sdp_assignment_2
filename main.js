@@ -1,6 +1,10 @@
 const searchForm = document.getElementById('search-form');
 const searchInput = document.getElementById('search');
 const resultContainer = document.getElementById('result-container');
+const addToCartBtns = document.querySelectorAll('.add-to-cart-btn');
+const cartTable = document.getElementById('cart-table');
+
+const cartItems = [];
 
 searchForm.addEventListener('submit', (e) => {
     e.preventDefault();
@@ -90,74 +94,39 @@ function showSearchResult(drinks) {
     resultContainer.innerHTML = drinksHTML;
 }
 
-
-// async function showItemDetails(drink_id){
-//     try {
-//         showLoading();
-//         const response = await fetch(`https://www.thecocktaildb.com/api/json/v1/1/lookup.php?i=${drink_id}`);
-//         const data = await response.json();
-//         console.log(data);
-//         // scroool to top
-//         window.scrollTo(0, 0);
-//         if (data.drinks === null ||data.drinks.length === 0) {
-//             showNotFound();
-//         }else{
-//             resultContainer.innerHTML = `
-//             <!-- item details starts -->
-//                 <div class="col-md-12" id="item-details">
-//                 <div class="card m-2 p-2">
-//                     <img class="card-img-top rounded w-100 object-fit-cover" width="200px" height="300"  src="${data.drinks[0].strDrinkThumb}" alt="Card image cap">
-//                     <div class="card-block">
-//                     <h4 class="card-title py-2">${data.drinks[0].strDrink}</h4>
-//                     <p class="card-text text-muted">${data.drinks[0].strInstructions}</p>
-//                     <ul>
-//                         <li>${data.drinks[0].strIngredient1 || 'N/A'} : ${data.drinks[0].strMeasure1 || 'N/A'}</li>
-//                         <li>${data.drinks[0].strIngredient2 || 'N/A'} : ${data.drinks[0].strMeasure2 || 'N/A'}</li>
-//                         <li>${data.drinks[0].strIngredient3 || 'N/A'} : ${data.drinks[0].strMeasure3 || 'N/A'}</li>
-//                         <li>${data.drinks[0].strIngredient4 || 'N/A'} : ${data.drinks[0].strMeasure4 || 'N/A'}</li>
-//                         <li>${data.drinks[0].strIngredient5 || 'N/A'} : ${data.drinks[0].strMeasure5 || 'N/A'}</li>
-//                         <li>${data.drinks[0].strIngredient6 || 'N/A'} : ${data.drinks[0].strMeasure6 || 'N/A'}</li>
-//                         <li>${data.drinks[0].strIngredient7 || 'N/A'} : ${data.drinks[0].strMeasure7 || 'N/A'}</li>
-//                         <li>${data.drinks[0].strIngredient8 || 'N/A'} : ${data.drinks[0].strMeasure8 || 'N/A'}</li>
-//                         <li>${data.drinks[0].strIngredient9 || 'N/A'} : ${data.drinks[0].strMeasure9 || 'N/A'}</li>
-//                         <li>${data.drinks[0].strIngredient10 || 'N/A'} : ${data.drinks[0].strMeasure10 || 'N/A'}</li>
-//                         <li>${data.drinks[0].strIngredient11 || 'N/A'} : ${data.drinks[0].strMeasure11 || 'N/A'}</li>
-//                         <li>${data.drinks[0].strIngredient12 || 'N/A'} : ${data.drinks[0].strMeasure12 || 'N/A'}</li>
-//                         <li>${data.drinks[0].strIngredient13 || 'N/A'} : ${data.drinks[0].strMeasure13 || 'N/A'}</li>
-//                         <li>${data.drinks[0].strIngredient14 || 'N/A'} : ${data.drinks[0].strMeasure14 || 'N/A'}</li>
-//                         <li>${data.drinks[0].strIngredient15 || 'N/A'} : ${data.drinks[0].strMeasure15 || 'N/A'}</li>
-//                         <li>${data.drinks[0].strIngredient16 || 'N/A'} : ${data.drinks[0].strMeasure16 || 'N/A'}</li>
-//                         <li>${data.drinks[0].strIngredient17 || 'N/A'} : ${data.drinks[0].strMeasure17 || 'N/A'}</li>
-//                         <li>${data.drinks[0].strIngredient18 || 'N/A'} : ${data.drinks[0].strMeasure18 || 'N/A'}</li>
-//                         <li>${data.drinks[0].strIngredient19 || 'N/A'} : ${data.drinks[0].strMeasure19 || 'N/A'}</li>
-//                         <li>${data.drinks[0].strIngredient20 || 'N/A'} : ${data.drinks[0].strMeasure20 || 'N/A'}</li>
-//                     </ul>
-//                     <div class="my-4">
-//                     <iframe
-//                         width="100%"
-//                         height="400"
-//                         src="https://www.youtube.com/embed/${data.meals[0].strYoutube.split("v=")[1]}"
-//                         title="YouTube video player"
-//                         frameborder="0"
-//                         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-//                         allowfullscreen>
-//                     </iframe>
-//                     </div>
-//                     <a href="${data.meals[0].strSource}" class=" d-block w-100 my-2">See source</a>
-//                 </div>
-//                 </div>
-//             <!-- item details ends -->
-
-//             `;
-//         }
-//     } catch (error) {
-//         showNotFound();
-//         console.log(error);
-//     }   
-// }
-
-
-
+document.body.addEventListener('click', function (e) {
+    if (e.target && e.target.classList.contains('add-to-cart-btn')) {
+      const mainCard = e.target.parentElement;
+      const drinkName = mainCard.querySelector('.card-title').textContent;
+      const drinkImage = mainCard.querySelector('.card-img-top').src;
+      const drinkId = mainCard.querySelector('.card-img-top').alt;
+      if(cartItems.length >=7){
+          alert('You can only add 7 items to the cart');
+      }else{
+          cartItems.push({ drinkName, drinkImage, drinkId });
+          propagateCart();
+      }   
+    }
+  });
+function propagateCart() {
+    let cartHTML = `<tr class="table-header">
+                        <th>SL</th>
+                        <th>IMG</th>
+                        <th>Item Name</th>
+                    </tr>`;
+    cartItems.forEach((item,index) => {
+        const cartItemHTML = `
+        <tr class="cart-item">
+                        <td>${index+1}</td>
+                        <td class="text-center vertical-align-middle"><img class="rounded-circle" width="50px" height="50px" src="${item.drinkImage}" alt=""></td>
+                        <td class="vertical-align-middle">${item.drinkName}</td>
+        </tr>
+        `;
+        cartHTML += cartItemHTML;
+    });
+    cartTable.innerHTML = cartHTML;
+    document.getElementById('total-cart-items').textContent = cartItems.length;
+}
 
 
 function showNotFound() {

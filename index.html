@@ -8,6 +8,8 @@
     <title>Search</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-4Q6Gf2aSP4eDXB8Miphtr37CMZZQ5oXLH2yaXMJ2w8e2ZtHTl7GptT4jmndRuHDT" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js" integrity="sha384-j1CDi7MgGQ12Z7Qab0qlWQ/Qqz24Gc6BM0thvEMVjHnfYGF0rmFCozFSxQBxwHKO" crossorigin="anonymous"></script>
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&display=swap" rel="stylesheet">
@@ -37,29 +39,56 @@
         <div class="row">
             <div class="col-md-9 ">
                 <div class="row my-3" id="result-container">
-                    <div class="col-md-4 text-center">
-                        <div class="card p-2 mt-4">
-                            <img class="card-img-top rounded" src="https://www.thecocktaildb.com/images/media/drink/m7iaxu1504885119.jpg" alt="Card image cap">
-                            <div class="card-block">
-                                <h4 class="card-title py-2">Kiss me Quick</h4>
-                                <p class="card-text text-muted">Category : Ordinary Drink</p>
-                                <p class="card-text text-muted">mix in the glas...</p>
-                                <button type="button" class="btn btn-outline-warning  " onclick="showItemDetails(15026)">Details </button>
-                                <button type="button" class="btn btn-warning ms-2" onclick="addToCart(15026)">Add to Cart </button>
-                            </div>
-                        </div>
-                    </div>
                     <!-- single item card starts-->
                     <div class="col-md-4 text-center">
                         <div class="card p-2 mt-4">
-                            <img class="card-img-top rounded" src="https://www.thecocktaildb.com/images/media/drink/b4cadp1619695347.jpg" alt="Card image cap">
-                            <div class="card-block">
+                        <div class="card-block">
+                        <img class="card-img-top rounded" src="https://www.thecocktaildb.com/images/media/drink/b4cadp1619695347.jpg" alt="Card image cap">
                                 <h4 class="card-title py-2">Frosé</h4>
                                 <p class="card-text text-muted">Category : Cocktail</p>
                                 <p class="card-text text-muted">Step 1
             Pour ros...</p>
-                                <button type="button" class="btn btn-outline-warning  " onclick="showItemDetails(178352)">Details </button>
-                                <button type="button" class="btn btn-warning ms-2" onclick="addToCart(178352)">Add to Cart </button>
+                                <!-- Button trigger modal -->
+                                <button type="button" class="btn btn-outline-warning" data-bs-toggle="modal" data-bs-target="#exampleModal_178352">
+                                    Details
+                                </button>
+            
+                                <!-- Modal -->
+                                <div class="modal fade" id="exampleModal_178352" tabindex="-1" aria-labelledby="exampleModalLabel_178352" aria-hidden="true">
+                                <div class="modal-dialog">
+                                    <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h1 class="modal-title fs-5" id="exampleModalLabel_178352">Frosé</h1>
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                    </div>
+                                    <div class="modal-body">
+                                        Step 1
+            Pour rosé into a 13x9" pan and freeze until almost solid (it won't completely solidify due to the alcohol), at least 6 hours.
+            
+            Step 2
+            Meanwhile, bring sugar and ½ cup water to a boil in a medium saucepan; cook, stirring constantly, until sugar dissolves, about 3 minutes. Add strawberries, remove from heat, and let sit 30 minutes to infuse syrup with strawberry flavor. Strain through a fine-mesh sieve into a small bowl (do not press on solids); cover and chill until cold, about 30 minutes.
+            
+            Step 3
+            Scrape rosé into a blender. Add lemon juice, 3½ ounces strawberry syrup, and 1 cup crushed ice and purée until smooth. Transfer blender jar to freezer and freeze until frosé is thickened (aim for milkshake consistency), 25–35 minutes.
+            
+            Step 4
+            Blend again until frosé is slushy. Divide among glasses.
+            
+            Step 5
+            Do Ahead: Rosé can be frozen 1 week ahead.
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                    </div>
+                                    </div>
+                                </div>
+                                </div>
+                                <!-- Modal Ends -->
+            
+            
+                                <button type="button" class="btn btn-warning ms-2 add-to-cart-btn">Add to Cart </button>
+            
+                               
                             </div>
                         </div>
                     </div>
@@ -68,13 +97,39 @@
                     <!-- single item card starts-->
                     <div class="col-md-4 text-center">
                         <div class="card p-2 mt-4">
-                            <img class="card-img-top rounded" src="https://www.thecocktaildb.com/images/media/drink/h5za6y1582477994.jpg" alt="Card image cap">
-                            <div class="card-block">
+                        <div class="card-block">
+                        <img class="card-img-top rounded" src="https://www.thecocktaildb.com/images/media/drink/h5za6y1582477994.jpg" alt="Card image cap">
                                 <h4 class="card-title py-2">Affair</h4>
                                 <p class="card-text text-muted">Category : Ordinary Drink</p>
                                 <p class="card-text text-muted">Pour schnapps, ...</p>
-                                <button type="button" class="btn btn-outline-warning  " onclick="showItemDetails(17839)">Details </button>
-                                <button type="button" class="btn btn-warning ms-2" onclick="addToCart(17839)">Add to Cart </button>
+                                <!-- Button trigger modal -->
+                                <button type="button" class="btn btn-outline-warning" data-bs-toggle="modal" data-bs-target="#exampleModal_17839">
+                                    Details
+                                </button>
+            
+                                <!-- Modal -->
+                                <div class="modal fade" id="exampleModal_17839" tabindex="-1" aria-labelledby="exampleModalLabel_17839" aria-hidden="true">
+                                <div class="modal-dialog">
+                                    <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h1 class="modal-title fs-5" id="exampleModalLabel_17839">Affair</h1>
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                    </div>
+                                    <div class="modal-body">
+                                        Pour schnapps, orange juice, and cranberry juice over ice in a highball glass. Top with club soda and serve.
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                    </div>
+                                    </div>
+                                </div>
+                                </div>
+                                <!-- Modal Ends -->
+            
+            
+                                <button type="button" class="btn btn-warning ms-2 add-to-cart-btn">Add to Cart </button>
+            
+                               
                             </div>
                         </div>
                     </div>
@@ -83,13 +138,39 @@
                     <!-- single item card starts-->
                     <div class="col-md-4 text-center">
                         <div class="card p-2 mt-4">
-                            <img class="card-img-top rounded" src="https://www.thecocktaildb.com/images/media/drink/vqwryq1441245927.jpg" alt="Card image cap">
-                            <div class="card-block">
+                        <div class="card-block">
+                        <img class="card-img-top rounded" src="https://www.thecocktaildb.com/images/media/drink/vqwryq1441245927.jpg" alt="Card image cap">
                                 <h4 class="card-title py-2">Frappé</h4>
                                 <p class="card-text text-muted">Category : Coffee / Tea</p>
                                 <p class="card-text text-muted">Mix together. B...</p>
-                                <button type="button" class="btn btn-outline-warning  " onclick="showItemDetails(12768)">Details </button>
-                                <button type="button" class="btn btn-warning ms-2" onclick="addToCart(12768)">Add to Cart </button>
+                                <!-- Button trigger modal -->
+                                <button type="button" class="btn btn-outline-warning" data-bs-toggle="modal" data-bs-target="#exampleModal_12768">
+                                    Details
+                                </button>
+            
+                                <!-- Modal -->
+                                <div class="modal fade" id="exampleModal_12768" tabindex="-1" aria-labelledby="exampleModalLabel_12768" aria-hidden="true">
+                                <div class="modal-dialog">
+                                    <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h1 class="modal-title fs-5" id="exampleModalLabel_12768">Frappé</h1>
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                    </div>
+                                    <div class="modal-body">
+                                        Mix together. Blend at highest blender speed for about 1 minute. Pour into a glass and drink with a straw. Notes: This works best if everything is cold (if you make fresh coffee, mix it with the milk and let it sit in the fridge for 1/2 hour. If it is not frothy, add more milk, or even just some more milk powder. The froth gradually turns to liquid at the bottom of the glass, so you will find that you can sit and drink this for about 1/2 hour, with more iced coffee continually appearing at the bottom. Very refreshing.
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                    </div>
+                                    </div>
+                                </div>
+                                </div>
+                                <!-- Modal Ends -->
+            
+            
+                                <button type="button" class="btn btn-warning ms-2 add-to-cart-btn">Add to Cart </button>
+            
+                               
                             </div>
                         </div>
                     </div>
@@ -98,13 +179,39 @@
                     <!-- single item card starts-->
                     <div class="col-md-4 text-center">
                         <div class="card p-2 mt-4">
-                            <img class="card-img-top rounded" src="https://www.thecocktaildb.com/images/media/drink/wzdtnn1582477684.jpg" alt="Card image cap">
-                            <div class="card-block">
+                        <div class="card-block">
+                        <img class="card-img-top rounded" src="https://www.thecocktaildb.com/images/media/drink/wzdtnn1582477684.jpg" alt="Card image cap">
                                 <h4 class="card-title py-2">Affinity</h4>
                                 <p class="card-text text-muted">Category : Ordinary Drink</p>
                                 <p class="card-text text-muted">In a mixing gla...</p>
-                                <button type="button" class="btn btn-outline-warning  " onclick="showItemDetails(17840)">Details </button>
-                                <button type="button" class="btn btn-warning ms-2" onclick="addToCart(17840)">Add to Cart </button>
+                                <!-- Button trigger modal -->
+                                <button type="button" class="btn btn-outline-warning" data-bs-toggle="modal" data-bs-target="#exampleModal_17840">
+                                    Details
+                                </button>
+            
+                                <!-- Modal -->
+                                <div class="modal fade" id="exampleModal_17840" tabindex="-1" aria-labelledby="exampleModalLabel_17840" aria-hidden="true">
+                                <div class="modal-dialog">
+                                    <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h1 class="modal-title fs-5" id="exampleModalLabel_17840">Affinity</h1>
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                    </div>
+                                    <div class="modal-body">
+                                        In a mixing glass half-filled with ice cubes, combine all of the ingredients. Stir well. Strain into a cocktail glass.
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                    </div>
+                                    </div>
+                                </div>
+                                </div>
+                                <!-- Modal Ends -->
+            
+            
+                                <button type="button" class="btn btn-warning ms-2 add-to-cart-btn">Add to Cart </button>
+            
+                               
                             </div>
                         </div>
                     </div>
@@ -113,13 +220,39 @@
                     <!-- single item card starts-->
                     <div class="col-md-4 text-center">
                         <div class="card p-2 mt-4">
-                            <img class="card-img-top rounded" src="https://www.thecocktaildb.com/images/media/drink/drtihp1606768397.jpg" alt="Card image cap">
-                            <div class="card-block">
+                        <div class="card-block">
+                        <img class="card-img-top rounded" src="https://www.thecocktaildb.com/images/media/drink/drtihp1606768397.jpg" alt="Card image cap">
                                 <h4 class="card-title py-2">Gin Fizz</h4>
                                 <p class="card-text text-muted">Category : Ordinary Drink</p>
                                 <p class="card-text text-muted">Shake all ingre...</p>
-                                <button type="button" class="btn btn-outline-warning  " onclick="showItemDetails(11410)">Details </button>
-                                <button type="button" class="btn btn-warning ms-2" onclick="addToCart(11410)">Add to Cart </button>
+                                <!-- Button trigger modal -->
+                                <button type="button" class="btn btn-outline-warning" data-bs-toggle="modal" data-bs-target="#exampleModal_11410">
+                                    Details
+                                </button>
+            
+                                <!-- Modal -->
+                                <div class="modal fade" id="exampleModal_11410" tabindex="-1" aria-labelledby="exampleModalLabel_11410" aria-hidden="true">
+                                <div class="modal-dialog">
+                                    <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h1 class="modal-title fs-5" id="exampleModalLabel_11410">Gin Fizz</h1>
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                    </div>
+                                    <div class="modal-body">
+                                        Shake all ingredients with ice cubes, except soda water. Pour into glass. Top with soda water.
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                    </div>
+                                    </div>
+                                </div>
+                                </div>
+                                <!-- Modal Ends -->
+            
+            
+                                <button type="button" class="btn btn-warning ms-2 add-to-cart-btn">Add to Cart </button>
+            
+                               
                             </div>
                         </div>
                     </div>
@@ -128,13 +261,39 @@
                     <!-- single item card starts-->
                     <div class="col-md-4 text-center">
                         <div class="card p-2 mt-4">
-                            <img class="card-img-top rounded" src="https://www.thecocktaildb.com/images/media/drink/xrl66i1493068702.jpg" alt="Card image cap">
-                            <div class="card-block">
+                        <div class="card-block">
+                        <img class="card-img-top rounded" src="https://www.thecocktaildb.com/images/media/drink/xrl66i1493068702.jpg" alt="Card image cap">
                                 <h4 class="card-title py-2">After sex</h4>
                                 <p class="card-text text-muted">Category : Ordinary Drink</p>
                                 <p class="card-text text-muted">Pour the vodka ...</p>
-                                <button type="button" class="btn btn-outline-warning  " onclick="showItemDetails(15182)">Details </button>
-                                <button type="button" class="btn btn-warning ms-2" onclick="addToCart(15182)">Add to Cart </button>
+                                <!-- Button trigger modal -->
+                                <button type="button" class="btn btn-outline-warning" data-bs-toggle="modal" data-bs-target="#exampleModal_15182">
+                                    Details
+                                </button>
+            
+                                <!-- Modal -->
+                                <div class="modal fade" id="exampleModal_15182" tabindex="-1" aria-labelledby="exampleModalLabel_15182" aria-hidden="true">
+                                <div class="modal-dialog">
+                                    <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h1 class="modal-title fs-5" id="exampleModalLabel_15182">After sex</h1>
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                    </div>
+                                    <div class="modal-body">
+                                        Pour the vodka and creme over some ice cubes in a tall glass and fill up with juice. to make it beuty full make the top of the glass with a grenadine and sugar
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                    </div>
+                                    </div>
+                                </div>
+                                </div>
+                                <!-- Modal Ends -->
+            
+            
+                                <button type="button" class="btn btn-warning ms-2 add-to-cart-btn">Add to Cart </button>
+            
+                               
                             </div>
                         </div>
                     </div>
@@ -143,13 +302,39 @@
                     <!-- single item card starts-->
                     <div class="col-md-4 text-center">
                         <div class="card p-2 mt-4">
-                            <img class="card-img-top rounded" src="https://www.thecocktaildb.com/images/media/drink/y36z8c1503563911.jpg" alt="Card image cap">
-                            <div class="card-block">
+                        <div class="card-block">
+                        <img class="card-img-top rounded" src="https://www.thecocktaildb.com/images/media/drink/y36z8c1503563911.jpg" alt="Card image cap">
                                 <h4 class="card-title py-2">Downshift</h4>
                                 <p class="card-text text-muted">Category : Punch / Party Drink</p>
                                 <p class="card-text text-muted">Start with the ...</p>
-                                <button type="button" class="btn btn-outline-warning  " onclick="showItemDetails(16991)">Details </button>
-                                <button type="button" class="btn btn-warning ms-2" onclick="addToCart(16991)">Add to Cart </button>
+                                <!-- Button trigger modal -->
+                                <button type="button" class="btn btn-outline-warning" data-bs-toggle="modal" data-bs-target="#exampleModal_16991">
+                                    Details
+                                </button>
+            
+                                <!-- Modal -->
+                                <div class="modal fade" id="exampleModal_16991" tabindex="-1" aria-labelledby="exampleModalLabel_16991" aria-hidden="true">
+                                <div class="modal-dialog">
+                                    <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h1 class="modal-title fs-5" id="exampleModalLabel_16991">Downshift</h1>
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                    </div>
+                                    <div class="modal-body">
+                                        Start with the Sprite. Next comes the tequila. After that, add the Minute Maid Fruit Punch, then float the 151. Rocks optional.
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                    </div>
+                                    </div>
+                                </div>
+                                </div>
+                                <!-- Modal Ends -->
+            
+            
+                                <button type="button" class="btn btn-warning ms-2 add-to-cart-btn">Add to Cart </button>
+            
+                               
                             </div>
                         </div>
                     </div>
@@ -158,13 +343,39 @@
                     <!-- single item card starts-->
                     <div class="col-md-4 text-center">
                         <div class="card p-2 mt-4">
-                            <img class="card-img-top rounded" src="https://www.thecocktaildb.com/images/media/drink/uc63bh1582483589.jpg" alt="Card image cap">
-                            <div class="card-block">
+                        <div class="card-block">
+                        <img class="card-img-top rounded" src="https://www.thecocktaildb.com/images/media/drink/uc63bh1582483589.jpg" alt="Card image cap">
                                 <h4 class="card-title py-2">Dragonfly</h4>
                                 <p class="card-text text-muted">Category : Ordinary Drink</p>
                                 <p class="card-text text-muted">In a highball g...</p>
-                                <button type="button" class="btn btn-outline-warning  " onclick="showItemDetails(11320)">Details </button>
-                                <button type="button" class="btn btn-warning ms-2" onclick="addToCart(11320)">Add to Cart </button>
+                                <!-- Button trigger modal -->
+                                <button type="button" class="btn btn-outline-warning" data-bs-toggle="modal" data-bs-target="#exampleModal_11320">
+                                    Details
+                                </button>
+            
+                                <!-- Modal -->
+                                <div class="modal fade" id="exampleModal_11320" tabindex="-1" aria-labelledby="exampleModalLabel_11320" aria-hidden="true">
+                                <div class="modal-dialog">
+                                    <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h1 class="modal-title fs-5" id="exampleModalLabel_11320">Dragonfly</h1>
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                    </div>
+                                    <div class="modal-body">
+                                        In a highball glass almost filled with ice cubes, combine the gin and ginger ale. Stir well. Garnish with the lime wedge.
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                    </div>
+                                    </div>
+                                </div>
+                                </div>
+                                <!-- Modal Ends -->
+            
+            
+                                <button type="button" class="btn btn-warning ms-2 add-to-cart-btn">Add to Cart </button>
+            
+                               
                             </div>
                         </div>
                     </div>
@@ -173,13 +384,39 @@
                     <!-- single item card starts-->
                     <div class="col-md-4 text-center">
                         <div class="card p-2 mt-4">
-                            <img class="card-img-top rounded" src="https://www.thecocktaildb.com/images/media/drink/hrxfbl1606773109.jpg" alt="Card image cap">
-                            <div class="card-block">
+                        <div class="card-block">
+                        <img class="card-img-top rounded" src="https://www.thecocktaildb.com/images/media/drink/hrxfbl1606773109.jpg" alt="Card image cap">
                                 <h4 class="card-title py-2">French 75</h4>
                                 <p class="card-text text-muted">Category : Ordinary Drink</p>
                                 <p class="card-text text-muted">Combine gin, su...</p>
-                                <button type="button" class="btn btn-outline-warning  " onclick="showItemDetails(17197)">Details </button>
-                                <button type="button" class="btn btn-warning ms-2" onclick="addToCart(17197)">Add to Cart </button>
+                                <!-- Button trigger modal -->
+                                <button type="button" class="btn btn-outline-warning" data-bs-toggle="modal" data-bs-target="#exampleModal_17197">
+                                    Details
+                                </button>
+            
+                                <!-- Modal -->
+                                <div class="modal fade" id="exampleModal_17197" tabindex="-1" aria-labelledby="exampleModalLabel_17197" aria-hidden="true">
+                                <div class="modal-dialog">
+                                    <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h1 class="modal-title fs-5" id="exampleModalLabel_17197">French 75</h1>
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                    </div>
+                                    <div class="modal-body">
+                                        Combine gin, sugar, and lemon juice in a cocktail shaker filled with ice. Shake vigorously and strain into a chilled champagne glass. Top up with Champagne. Stir gently.
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                    </div>
+                                    </div>
+                                </div>
+                                </div>
+                                <!-- Modal Ends -->
+            
+            
+                                <button type="button" class="btn btn-warning ms-2 add-to-cart-btn">Add to Cart </button>
+            
+                               
                             </div>
                         </div>
                     </div>
@@ -188,13 +425,39 @@
                     <!-- single item card starts-->
                     <div class="col-md-4 text-center">
                         <div class="card p-2 mt-4">
-                            <img class="card-img-top rounded" src="https://www.thecocktaildb.com/images/media/drink/7dkf0i1487602928.jpg" alt="Card image cap">
-                            <div class="card-block">
+                        <div class="card-block">
+                        <img class="card-img-top rounded" src="https://www.thecocktaildb.com/images/media/drink/7dkf0i1487602928.jpg" alt="Card image cap">
                                 <h4 class="card-title py-2">Autodafé</h4>
                                 <p class="card-text text-muted">Category : Ordinary Drink</p>
                                 <p class="card-text text-muted">Mix and fill up...</p>
-                                <button type="button" class="btn btn-outline-warning  " onclick="showItemDetails(12756)">Details </button>
-                                <button type="button" class="btn btn-warning ms-2" onclick="addToCart(12756)">Add to Cart </button>
+                                <!-- Button trigger modal -->
+                                <button type="button" class="btn btn-outline-warning" data-bs-toggle="modal" data-bs-target="#exampleModal_12756">
+                                    Details
+                                </button>
+            
+                                <!-- Modal -->
+                                <div class="modal fade" id="exampleModal_12756" tabindex="-1" aria-labelledby="exampleModalLabel_12756" aria-hidden="true">
+                                <div class="modal-dialog">
+                                    <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h1 class="modal-title fs-5" id="exampleModalLabel_12756">Autodafé</h1>
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                    </div>
+                                    <div class="modal-body">
+                                        Mix and fill up with soda water. Drunk by finns on a sunny day any time of the year and day.
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                    </div>
+                                    </div>
+                                </div>
+                                </div>
+                                <!-- Modal Ends -->
+            
+            
+                                <button type="button" class="btn btn-warning ms-2 add-to-cart-btn">Add to Cart </button>
+            
+                               
                             </div>
                         </div>
                     </div>
@@ -203,13 +466,39 @@
                     <!-- single item card starts-->
                     <div class="col-md-4 text-center">
                         <div class="card p-2 mt-4">
-                            <img class="card-img-top rounded" src="https://www.thecocktaildb.com/images/media/drink/r9cz3q1504519844.jpg" alt="Card image cap">
-                            <div class="card-block">
+                        <div class="card-block">
+                        <img class="card-img-top rounded" src="https://www.thecocktaildb.com/images/media/drink/r9cz3q1504519844.jpg" alt="Card image cap">
                                 <h4 class="card-title py-2">Foxy Lady</h4>
                                 <p class="card-text text-muted">Category : Ordinary Drink</p>
                                 <p class="card-text text-muted">Shake all ingre...</p>
-                                <button type="button" class="btn btn-outline-warning  " onclick="showItemDetails(11375)">Details </button>
-                                <button type="button" class="btn btn-warning ms-2" onclick="addToCart(11375)">Add to Cart </button>
+                                <!-- Button trigger modal -->
+                                <button type="button" class="btn btn-outline-warning" data-bs-toggle="modal" data-bs-target="#exampleModal_11375">
+                                    Details
+                                </button>
+            
+                                <!-- Modal -->
+                                <div class="modal fade" id="exampleModal_11375" tabindex="-1" aria-labelledby="exampleModalLabel_11375" aria-hidden="true">
+                                <div class="modal-dialog">
+                                    <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h1 class="modal-title fs-5" id="exampleModalLabel_11375">Foxy Lady</h1>
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                    </div>
+                                    <div class="modal-body">
+                                        Shake all ingredients with ice, strain into a chilled cocktail glass, and serve.
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                    </div>
+                                    </div>
+                                </div>
+                                </div>
+                                <!-- Modal Ends -->
+            
+            
+                                <button type="button" class="btn btn-warning ms-2 add-to-cart-btn">Add to Cart </button>
+            
+                               
                             </div>
                         </div>
                     </div>
@@ -218,13 +507,39 @@
                     <!-- single item card starts-->
                     <div class="col-md-4 text-center">
                         <div class="card p-2 mt-4">
-                            <img class="card-img-top rounded" src="https://www.thecocktaildb.com/images/media/drink/vuquyv1468876052.jpg" alt="Card image cap">
-                            <div class="card-block">
+                        <div class="card-block">
+                        <img class="card-img-top rounded" src="https://www.thecocktaildb.com/images/media/drink/vuquyv1468876052.jpg" alt="Card image cap">
                                 <h4 class="card-title py-2">Afterglow</h4>
                                 <p class="card-text text-muted">Category : Cocktail</p>
                                 <p class="card-text text-muted">Mix. Serve over...</p>
-                                <button type="button" class="btn btn-outline-warning  " onclick="showItemDetails(12560)">Details </button>
-                                <button type="button" class="btn btn-warning ms-2" onclick="addToCart(12560)">Add to Cart </button>
+                                <!-- Button trigger modal -->
+                                <button type="button" class="btn btn-outline-warning" data-bs-toggle="modal" data-bs-target="#exampleModal_12560">
+                                    Details
+                                </button>
+            
+                                <!-- Modal -->
+                                <div class="modal fade" id="exampleModal_12560" tabindex="-1" aria-labelledby="exampleModalLabel_12560" aria-hidden="true">
+                                <div class="modal-dialog">
+                                    <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h1 class="modal-title fs-5" id="exampleModalLabel_12560">Afterglow</h1>
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                    </div>
+                                    <div class="modal-body">
+                                        Mix. Serve over ice.
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                    </div>
+                                    </div>
+                                </div>
+                                </div>
+                                <!-- Modal Ends -->
+            
+            
+                                <button type="button" class="btn btn-warning ms-2 add-to-cart-btn">Add to Cart </button>
+            
+                               
                             </div>
                         </div>
                     </div>
@@ -233,13 +548,39 @@
                     <!-- single item card starts-->
                     <div class="col-md-4 text-center">
                         <div class="card p-2 mt-4">
-                            <img class="card-img-top rounded" src="https://www.thecocktaildb.com/images/media/drink/e5zgao1582582378.jpg" alt="Card image cap">
-                            <div class="card-block">
+                        <div class="card-block">
+                        <img class="card-img-top rounded" src="https://www.thecocktaildb.com/images/media/drink/e5zgao1582582378.jpg" alt="Card image cap">
                                 <h4 class="card-title py-2">Godfather</h4>
                                 <p class="card-text text-muted">Category : Ordinary Drink</p>
                                 <p class="card-text text-muted">Pour all ingred...</p>
-                                <button type="button" class="btn btn-outline-warning  " onclick="showItemDetails(11423)">Details </button>
-                                <button type="button" class="btn btn-warning ms-2" onclick="addToCart(11423)">Add to Cart </button>
+                                <!-- Button trigger modal -->
+                                <button type="button" class="btn btn-outline-warning" data-bs-toggle="modal" data-bs-target="#exampleModal_11423">
+                                    Details
+                                </button>
+            
+                                <!-- Modal -->
+                                <div class="modal fade" id="exampleModal_11423" tabindex="-1" aria-labelledby="exampleModalLabel_11423" aria-hidden="true">
+                                <div class="modal-dialog">
+                                    <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h1 class="modal-title fs-5" id="exampleModalLabel_11423">Godfather</h1>
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                    </div>
+                                    <div class="modal-body">
+                                        Pour all ingredients directly into old fashioned glass filled with ice cubes. Stir gently.
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                    </div>
+                                    </div>
+                                </div>
+                                </div>
+                                <!-- Modal Ends -->
+            
+            
+                                <button type="button" class="btn btn-warning ms-2 add-to-cart-btn">Add to Cart </button>
+            
+                               
                             </div>
                         </div>
                     </div>
@@ -248,13 +589,39 @@
                     <!-- single item card starts-->
                     <div class="col-md-4 text-center">
                         <div class="card p-2 mt-4">
-                            <img class="card-img-top rounded" src="https://www.thecocktaildb.com/images/media/drink/vyrurp1472667777.jpg" alt="Card image cap">
-                            <div class="card-block">
+                        <div class="card-block">
+                        <img class="card-img-top rounded" src="https://www.thecocktaildb.com/images/media/drink/vyrurp1472667777.jpg" alt="Card image cap">
                                 <h4 class="card-title py-2">Afternoon</h4>
                                 <p class="card-text text-muted">Category : Coffee / Tea</p>
                                 <p class="card-text text-muted">Build into a su...</p>
-                                <button type="button" class="btn btn-outline-warning  " onclick="showItemDetails(13162)">Details </button>
-                                <button type="button" class="btn btn-warning ms-2" onclick="addToCart(13162)">Add to Cart </button>
+                                <!-- Button trigger modal -->
+                                <button type="button" class="btn btn-outline-warning" data-bs-toggle="modal" data-bs-target="#exampleModal_13162">
+                                    Details
+                                </button>
+            
+                                <!-- Modal -->
+                                <div class="modal fade" id="exampleModal_13162" tabindex="-1" aria-labelledby="exampleModalLabel_13162" aria-hidden="true">
+                                <div class="modal-dialog">
+                                    <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h1 class="modal-title fs-5" id="exampleModalLabel_13162">Afternoon</h1>
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                    </div>
+                                    <div class="modal-body">
+                                        Build into a suiting glass, with no ice. Cream on top if wanted. Served directly.
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                    </div>
+                                    </div>
+                                </div>
+                                </div>
+                                <!-- Modal Ends -->
+            
+            
+                                <button type="button" class="btn btn-warning ms-2 add-to-cart-btn">Add to Cart </button>
+            
+                               
                             </div>
                         </div>
                     </div>
@@ -263,13 +630,39 @@
                     <!-- single item card starts-->
                     <div class="col-md-4 text-center">
                         <div class="card p-2 mt-4">
-                            <img class="card-img-top rounded" src="https://www.thecocktaildb.com/images/media/drink/vqwptt1441247711.jpg" alt="Card image cap">
-                            <div class="card-block">
+                        <div class="card-block">
+                        <img class="card-img-top rounded" src="https://www.thecocktaildb.com/images/media/drink/vqwptt1441247711.jpg" alt="Card image cap">
                                 <h4 class="card-title py-2">Cafe Savoy</h4>
                                 <p class="card-text text-muted">Category : Coffee / Tea</p>
                                 <p class="card-text text-muted">Fill mug almost...</p>
-                                <button type="button" class="btn btn-outline-warning  " onclick="showItemDetails(14181)">Details </button>
-                                <button type="button" class="btn btn-warning ms-2" onclick="addToCart(14181)">Add to Cart </button>
+                                <!-- Button trigger modal -->
+                                <button type="button" class="btn btn-outline-warning" data-bs-toggle="modal" data-bs-target="#exampleModal_14181">
+                                    Details
+                                </button>
+            
+                                <!-- Modal -->
+                                <div class="modal fade" id="exampleModal_14181" tabindex="-1" aria-labelledby="exampleModalLabel_14181" aria-hidden="true">
+                                <div class="modal-dialog">
+                                    <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h1 class="modal-title fs-5" id="exampleModalLabel_14181">Cafe Savoy</h1>
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                    </div>
+                                    <div class="modal-body">
+                                        Fill mug almost to top with coffee.Add milk, triple sec and brandy. Stir.
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                    </div>
+                                    </div>
+                                </div>
+                                </div>
+                                <!-- Modal Ends -->
+            
+            
+                                <button type="button" class="btn btn-warning ms-2 add-to-cart-btn">Add to Cart </button>
+            
+                               
                             </div>
                         </div>
                     </div>
@@ -278,13 +671,39 @@
                     <!-- single item card starts-->
                     <div class="col-md-4 text-center">
                         <div class="card p-2 mt-4">
-                            <img class="card-img-top rounded" src="https://www.thecocktaildb.com/images/media/drink/xwxyux1441254243.jpg" alt="Card image cap">
-                            <div class="card-block">
+                        <div class="card-block">
+                        <img class="card-img-top rounded" src="https://www.thecocktaildb.com/images/media/drink/xwxyux1441254243.jpg" alt="Card image cap">
                                 <h4 class="card-title py-2">Vodka Fizz</h4>
                                 <p class="card-text text-muted">Category : Other / Unknown</p>
                                 <p class="card-text text-muted">Blend all ingre...</p>
-                                <button type="button" class="btn btn-outline-warning  " onclick="showItemDetails(16967)">Details </button>
-                                <button type="button" class="btn btn-warning ms-2" onclick="addToCart(16967)">Add to Cart </button>
+                                <!-- Button trigger modal -->
+                                <button type="button" class="btn btn-outline-warning" data-bs-toggle="modal" data-bs-target="#exampleModal_16967">
+                                    Details
+                                </button>
+            
+                                <!-- Modal -->
+                                <div class="modal fade" id="exampleModal_16967" tabindex="-1" aria-labelledby="exampleModalLabel_16967" aria-hidden="true">
+                                <div class="modal-dialog">
+                                    <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h1 class="modal-title fs-5" id="exampleModalLabel_16967">Vodka Fizz</h1>
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                    </div>
+                                    <div class="modal-body">
+                                        Blend all ingredients, save nutmeg. Pour into large white wine glass and sprinkle nutmeg on top.
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                    </div>
+                                    </div>
+                                </div>
+                                </div>
+                                <!-- Modal Ends -->
+            
+            
+                                <button type="button" class="btn btn-warning ms-2 add-to-cart-btn">Add to Cart </button>
+            
+                               
                             </div>
                         </div>
                     </div>
@@ -293,13 +712,39 @@
                     <!-- single item card starts-->
                     <div class="col-md-4 text-center">
                         <div class="card p-2 mt-4">
-                            <img class="card-img-top rounded" src="https://www.thecocktaildb.com/images/media/drink/sk3lr91493068595.jpg" alt="Card image cap">
-                            <div class="card-block">
+                        <div class="card-block">
+                        <img class="card-img-top rounded" src="https://www.thecocktaildb.com/images/media/drink/sk3lr91493068595.jpg" alt="Card image cap">
                                 <h4 class="card-title py-2">After Five</h4>
                                 <p class="card-text text-muted">Category : Shot</p>
                                 <p class="card-text text-muted">1. Pour Kahlua ...</p>
-                                <button type="button" class="btn btn-outline-warning  " onclick="showItemDetails(13807)">Details </button>
-                                <button type="button" class="btn btn-warning ms-2" onclick="addToCart(13807)">Add to Cart </button>
+                                <!-- Button trigger modal -->
+                                <button type="button" class="btn btn-outline-warning" data-bs-toggle="modal" data-bs-target="#exampleModal_13807">
+                                    Details
+                                </button>
+            
+                                <!-- Modal -->
+                                <div class="modal fade" id="exampleModal_13807" tabindex="-1" aria-labelledby="exampleModalLabel_13807" aria-hidden="true">
+                                <div class="modal-dialog">
+                                    <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h1 class="modal-title fs-5" id="exampleModalLabel_13807">After Five</h1>
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                    </div>
+                                    <div class="modal-body">
+                                        1. Pour Kahlua into shot glass to about 1/2 full. 2. Using a spoon(inverted), slowly pour in the Peppermint Schnapps until glass is about 3/4 full. Done correctly, the Schnapps will flow under the Kahlua for a clear layer. 3. Again using a spoon, but this time right side up, slowly top off the glass with a layer of Bailey's. Be careful to place the spoon right at the top of the Kahlua layer and to raise it as the glass fills up. Done correctly, this will provide a layer of Bailey's floating over the Kahlua. 4. Toss it down all at once for something like a Peppermint Pattie, WITH A BANG!!! NOTE: Best if all ingredients are chilled
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                    </div>
+                                    </div>
+                                </div>
+                                </div>
+                                <!-- Modal Ends -->
+            
+            
+                                <button type="button" class="btn btn-warning ms-2 add-to-cart-btn">Add to Cart </button>
+            
+                               
                             </div>
                         </div>
                     </div>
@@ -308,13 +753,39 @@
                     <!-- single item card starts-->
                     <div class="col-md-4 text-center">
                         <div class="card p-2 mt-4">
-                            <img class="card-img-top rounded" src="https://www.thecocktaildb.com/images/media/drink/vaukir1606772580.jpg" alt="Card image cap">
-                            <div class="card-block">
+                        <div class="card-block">
+                        <img class="card-img-top rounded" src="https://www.thecocktaildb.com/images/media/drink/vaukir1606772580.jpg" alt="Card image cap">
                                 <h4 class="card-title py-2">Angel Face</h4>
                                 <p class="card-text text-muted">Category : Ordinary Drink</p>
                                 <p class="card-text text-muted">Shake all ingre...</p>
-                                <button type="button" class="btn btn-outline-warning  " onclick="showItemDetails(11034)">Details </button>
-                                <button type="button" class="btn btn-warning ms-2" onclick="addToCart(11034)">Add to Cart </button>
+                                <!-- Button trigger modal -->
+                                <button type="button" class="btn btn-outline-warning" data-bs-toggle="modal" data-bs-target="#exampleModal_11034">
+                                    Details
+                                </button>
+            
+                                <!-- Modal -->
+                                <div class="modal fade" id="exampleModal_11034" tabindex="-1" aria-labelledby="exampleModalLabel_11034" aria-hidden="true">
+                                <div class="modal-dialog">
+                                    <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h1 class="modal-title fs-5" id="exampleModalLabel_11034">Angel Face</h1>
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                    </div>
+                                    <div class="modal-body">
+                                        Shake all ingredients with ice and strain contents into a cocktail glass.
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                    </div>
+                                    </div>
+                                </div>
+                                </div>
+                                <!-- Modal Ends -->
+            
+            
+                                <button type="button" class="btn btn-warning ms-2 add-to-cart-btn">Add to Cart </button>
+            
+                               
                             </div>
                         </div>
                     </div>
@@ -323,13 +794,39 @@
                     <!-- single item card starts-->
                     <div class="col-md-4 text-center">
                         <div class="card p-2 mt-4">
-                            <img class="card-img-top rounded" src="https://www.thecocktaildb.com/images/media/drink/wvtwpp1478963454.jpg" alt="Card image cap">
-                            <div class="card-block">
+                        <div class="card-block">
+                        <img class="card-img-top rounded" src="https://www.thecocktaildb.com/images/media/drink/wvtwpp1478963454.jpg" alt="Card image cap">
                                 <h4 class="card-title py-2">Quick F**K</h4>
                                 <p class="card-text text-muted">Category : Shot</p>
                                 <p class="card-text text-muted">In a shot glass...</p>
-                                <button type="button" class="btn btn-outline-warning  " onclick="showItemDetails(13198)">Details </button>
-                                <button type="button" class="btn btn-warning ms-2" onclick="addToCart(13198)">Add to Cart </button>
+                                <!-- Button trigger modal -->
+                                <button type="button" class="btn btn-outline-warning" data-bs-toggle="modal" data-bs-target="#exampleModal_13198">
+                                    Details
+                                </button>
+            
+                                <!-- Modal -->
+                                <div class="modal fade" id="exampleModal_13198" tabindex="-1" aria-labelledby="exampleModalLabel_13198" aria-hidden="true">
+                                <div class="modal-dialog">
+                                    <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h1 class="modal-title fs-5" id="exampleModalLabel_13198">Quick F**K</h1>
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                    </div>
+                                    <div class="modal-body">
+                                        In a shot glass add 1/3 Kahlua first. Then 1/3 Miduri, topping it off with a 1/3 bailey's irish cream
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                    </div>
+                                    </div>
+                                </div>
+                                </div>
+                                <!-- Modal Ends -->
+            
+            
+                                <button type="button" class="btn btn-warning ms-2 add-to-cart-btn">Add to Cart </button>
+            
+                               
                             </div>
                         </div>
                     </div>
@@ -338,13 +835,39 @@
                     <!-- single item card starts-->
                     <div class="col-md-4 text-center">
                         <div class="card p-2 mt-4">
-                            <img class="card-img-top rounded" src="https://www.thecocktaildb.com/images/media/drink/rz5aun1504389701.jpg" alt="Card image cap">
-                            <div class="card-block">
+                        <div class="card-block">
+                        <img class="card-img-top rounded" src="https://www.thecocktaildb.com/images/media/drink/rz5aun1504389701.jpg" alt="Card image cap">
                                 <h4 class="card-title py-2">Brain Fart</h4>
                                 <p class="card-text text-muted">Category : Punch / Party Drink</p>
                                 <p class="card-text text-muted">Mix all ingredi...</p>
-                                <button type="button" class="btn btn-outline-warning  " onclick="showItemDetails(17120)">Details </button>
-                                <button type="button" class="btn btn-warning ms-2" onclick="addToCart(17120)">Add to Cart </button>
+                                <!-- Button trigger modal -->
+                                <button type="button" class="btn btn-outline-warning" data-bs-toggle="modal" data-bs-target="#exampleModal_17120">
+                                    Details
+                                </button>
+            
+                                <!-- Modal -->
+                                <div class="modal fade" id="exampleModal_17120" tabindex="-1" aria-labelledby="exampleModalLabel_17120" aria-hidden="true">
+                                <div class="modal-dialog">
+                                    <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h1 class="modal-title fs-5" id="exampleModalLabel_17120">Brain Fart</h1>
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                    </div>
+                                    <div class="modal-body">
+                                        Mix all ingredients together. Slowly and gently. Works best if ice is added to punch bowl and soda's are very cold.
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                    </div>
+                                    </div>
+                                </div>
+                                </div>
+                                <!-- Modal Ends -->
+            
+            
+                                <button type="button" class="btn btn-warning ms-2 add-to-cart-btn">Add to Cart </button>
+            
+                               
                             </div>
                         </div>
                     </div>
@@ -353,13 +876,39 @@
                     <!-- single item card starts-->
                     <div class="col-md-4 text-center">
                         <div class="card p-2 mt-4">
-                            <img class="card-img-top rounded" src="https://www.thecocktaildb.com/images/media/drink/64x5j41504351518.jpg" alt="Card image cap">
-                            <div class="card-block">
+                        <div class="card-block">
+                        <img class="card-img-top rounded" src="https://www.thecocktaildb.com/images/media/drink/64x5j41504351518.jpg" alt="Card image cap">
                                 <h4 class="card-title py-2">Porto flip</h4>
                                 <p class="card-text text-muted">Category : Ordinary Drink</p>
                                 <p class="card-text text-muted">Shake ingredien...</p>
-                                <button type="button" class="btn btn-outline-warning  " onclick="showItemDetails(17192)">Details </button>
-                                <button type="button" class="btn btn-warning ms-2" onclick="addToCart(17192)">Add to Cart </button>
+                                <!-- Button trigger modal -->
+                                <button type="button" class="btn btn-outline-warning" data-bs-toggle="modal" data-bs-target="#exampleModal_17192">
+                                    Details
+                                </button>
+            
+                                <!-- Modal -->
+                                <div class="modal fade" id="exampleModal_17192" tabindex="-1" aria-labelledby="exampleModalLabel_17192" aria-hidden="true">
+                                <div class="modal-dialog">
+                                    <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h1 class="modal-title fs-5" id="exampleModalLabel_17192">Porto flip</h1>
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                    </div>
+                                    <div class="modal-body">
+                                        Shake ingredients together in a mixer with ice. Strain into glass, garnish and serve.
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                    </div>
+                                    </div>
+                                </div>
+                                </div>
+                                <!-- Modal Ends -->
+            
+            
+                                <button type="button" class="btn btn-warning ms-2 add-to-cart-btn">Add to Cart </button>
+            
+                               
                             </div>
                         </div>
                     </div>
@@ -368,13 +917,39 @@
                     <!-- single item card starts-->
                     <div class="col-md-4 text-center">
                         <div class="card p-2 mt-4">
-                            <img class="card-img-top rounded" src="https://www.thecocktaildb.com/images/media/drink/wrh44j1504390609.jpg" alt="Card image cap">
-                            <div class="card-block">
+                        <div class="card-block">
+                        <img class="card-img-top rounded" src="https://www.thecocktaildb.com/images/media/drink/wrh44j1504390609.jpg" alt="Card image cap">
                                 <h4 class="card-title py-2">Royal Fizz</h4>
                                 <p class="card-text text-muted">Category : Ordinary Drink</p>
                                 <p class="card-text text-muted">Shake all ingre...</p>
-                                <button type="button" class="btn btn-outline-warning  " onclick="showItemDetails(12055)">Details </button>
-                                <button type="button" class="btn btn-warning ms-2" onclick="addToCart(12055)">Add to Cart </button>
+                                <!-- Button trigger modal -->
+                                <button type="button" class="btn btn-outline-warning" data-bs-toggle="modal" data-bs-target="#exampleModal_12055">
+                                    Details
+                                </button>
+            
+                                <!-- Modal -->
+                                <div class="modal fade" id="exampleModal_12055" tabindex="-1" aria-labelledby="exampleModalLabel_12055" aria-hidden="true">
+                                <div class="modal-dialog">
+                                    <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h1 class="modal-title fs-5" id="exampleModalLabel_12055">Royal Fizz</h1>
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                    </div>
+                                    <div class="modal-body">
+                                        Shake all ingredients (except cola) with ice and strain into a chilled collins glass. Fill with cola and serve.
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                    </div>
+                                    </div>
+                                </div>
+                                </div>
+                                <!-- Modal Ends -->
+            
+            
+                                <button type="button" class="btn btn-warning ms-2 add-to-cart-btn">Add to Cart </button>
+            
+                               
                             </div>
                         </div>
                     </div>
@@ -383,13 +958,39 @@
                     <!-- single item card starts-->
                     <div class="col-md-4 text-center">
                         <div class="card p-2 mt-4">
-                            <img class="card-img-top rounded" src="https://www.thecocktaildb.com/images/media/drink/acuvjz1582482022.jpg" alt="Card image cap">
-                            <div class="card-block">
+                        <div class="card-block">
+                        <img class="card-img-top rounded" src="https://www.thecocktaildb.com/images/media/drink/acuvjz1582482022.jpg" alt="Card image cap">
                                 <h4 class="card-title py-2">Frisco Sour</h4>
                                 <p class="card-text text-muted">Category : Ordinary Drink</p>
                                 <p class="card-text text-muted">Shake all ingre...</p>
-                                <button type="button" class="btn btn-outline-warning  " onclick="showItemDetails(11382)">Details </button>
-                                <button type="button" class="btn btn-warning ms-2" onclick="addToCart(11382)">Add to Cart </button>
+                                <!-- Button trigger modal -->
+                                <button type="button" class="btn btn-outline-warning" data-bs-toggle="modal" data-bs-target="#exampleModal_11382">
+                                    Details
+                                </button>
+            
+                                <!-- Modal -->
+                                <div class="modal fade" id="exampleModal_11382" tabindex="-1" aria-labelledby="exampleModalLabel_11382" aria-hidden="true">
+                                <div class="modal-dialog">
+                                    <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h1 class="modal-title fs-5" id="exampleModalLabel_11382">Frisco Sour</h1>
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                    </div>
+                                    <div class="modal-body">
+                                        Shake all ingredients (except slices of lemon and lime) with ice and strain into a whiskey sour glass. Decorate with the slices of lemon and lime and serve.
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                    </div>
+                                    </div>
+                                </div>
+                                </div>
+                                <!-- Modal Ends -->
+            
+            
+                                <button type="button" class="btn btn-warning ms-2 add-to-cart-btn">Add to Cart </button>
+            
+                               
                             </div>
                         </div>
                     </div>
@@ -398,13 +999,39 @@
                     <!-- single item card starts-->
                     <div class="col-md-4 text-center">
                         <div class="card p-2 mt-4">
-                            <img class="card-img-top rounded" src="https://www.thecocktaildb.com/images/media/drink/ttsvwy1472668781.jpg" alt="Card image cap">
-                            <div class="card-block">
+                        <div class="card-block">
+                        <img class="card-img-top rounded" src="https://www.thecocktaildb.com/images/media/drink/ttsvwy1472668781.jpg" alt="Card image cap">
                                 <h4 class="card-title py-2">Arctic Fish</h4>
                                 <p class="card-text text-muted">Category : Punch / Party Drink</p>
                                 <p class="card-text text-muted">Fill glass with...</p>
-                                <button type="button" class="btn btn-outline-warning  " onclick="showItemDetails(14622)">Details </button>
-                                <button type="button" class="btn btn-warning ms-2" onclick="addToCart(14622)">Add to Cart </button>
+                                <!-- Button trigger modal -->
+                                <button type="button" class="btn btn-outline-warning" data-bs-toggle="modal" data-bs-target="#exampleModal_14622">
+                                    Details
+                                </button>
+            
+                                <!-- Modal -->
+                                <div class="modal fade" id="exampleModal_14622" tabindex="-1" aria-labelledby="exampleModalLabel_14622" aria-hidden="true">
+                                <div class="modal-dialog">
+                                    <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h1 class="modal-title fs-5" id="exampleModalLabel_14622">Arctic Fish</h1>
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                    </div>
+                                    <div class="modal-body">
+                                        Fill glass with ice and fish, add vodka, grape soda and orange juice. DO NOT STIR!!!!! Serve well chilled.
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                    </div>
+                                    </div>
+                                </div>
+                                </div>
+                                <!-- Modal Ends -->
+            
+            
+                                <button type="button" class="btn btn-warning ms-2 add-to-cart-btn">Add to Cart </button>
+            
+                               
                             </div>
                         </div>
                     </div>
@@ -413,13 +1040,39 @@
                     <!-- single item card starts-->
                     <div class="col-md-4 text-center">
                         <div class="card p-2 mt-4">
-                            <img class="card-img-top rounded" src="https://www.thecocktaildb.com/images/media/drink/q0fg2m1484430704.jpg" alt="Card image cap">
-                            <div class="card-block">
+                        <div class="card-block">
+                        <img class="card-img-top rounded" src="https://www.thecocktaildb.com/images/media/drink/q0fg2m1484430704.jpg" alt="Card image cap">
                                 <h4 class="card-title py-2">Fruit Shake</h4>
                                 <p class="card-text text-muted">Category : Other / Unknown</p>
                                 <p class="card-text text-muted">Blend til smoot...</p>
-                                <button type="button" class="btn btn-outline-warning  " onclick="showItemDetails(12674)">Details </button>
-                                <button type="button" class="btn btn-warning ms-2" onclick="addToCart(12674)">Add to Cart </button>
+                                <!-- Button trigger modal -->
+                                <button type="button" class="btn btn-outline-warning" data-bs-toggle="modal" data-bs-target="#exampleModal_12674">
+                                    Details
+                                </button>
+            
+                                <!-- Modal -->
+                                <div class="modal fade" id="exampleModal_12674" tabindex="-1" aria-labelledby="exampleModalLabel_12674" aria-hidden="true">
+                                <div class="modal-dialog">
+                                    <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h1 class="modal-title fs-5" id="exampleModalLabel_12674">Fruit Shake</h1>
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                    </div>
+                                    <div class="modal-body">
+                                        Blend til smooth.
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                    </div>
+                                    </div>
+                                </div>
+                                </div>
+                                <!-- Modal Ends -->
+            
+            
+                                <button type="button" class="btn btn-warning ms-2 add-to-cart-btn">Add to Cart </button>
+            
+                               
                             </div>
                         </div>
                     </div>
@@ -454,7 +1107,6 @@
         <footer class="pt-5 mt-5">
             <p class="text-center text-muted mt-5   p-2 bg-light ">© 2025 Abu Sayed. All rights reserved.</p>
         </footer>
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js" integrity="sha384-j1CDi7MgGQ12Z7Qab0qlWQ/Qqz24Gc6BM0thvEMVjHnfYGF0rmFCozFSxQBxwHKO" crossorigin="anonymous"></script>
         <script src="./main.js"></script>
 </body>
 

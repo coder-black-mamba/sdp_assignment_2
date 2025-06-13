@@ -23,7 +23,7 @@ async function searchItems(searchTerm) {
         console.log(data);
         if (data.drinks.length === 0 || data.drinks === null) {
             showNotFound();
-        }else{
+        } else {
             showSearchResult(data.drinks);
         }
     } catch (error) {
@@ -34,95 +34,127 @@ async function searchItems(searchTerm) {
 
 
 
-function showSearchResult(drinks){
+function showSearchResult(drinks) {
     let drinksHTML = '';
     drinks.forEach(drink => {
         drinksHTML += `
         <!-- single item card starts-->
         <div class="col-md-4 text-center">
             <div class="card p-2 mt-4">
-                <img class="card-img-top rounded" src="${drink.strDrinkThumb}" alt="Card image cap">
-                <div class="card-block">
+            <div class="card-block">
+            <img class="card-img-top rounded" src="${drink.strDrinkThumb}" alt="Card image cap">
                     <h4 class="card-title py-2">${drink.strDrink}</h4>
                     <p class="card-text text-muted">Category : ${drink.strCategory}</p>
                     <p class="card-text text-muted">${drink.strInstructions.slice(0, 15)}...</p>
-                    <button type="button" class="btn btn-outline-warning  " onclick="showItemDetails(${drink.idDrink})">Details </button>
-                    <button type="button" class="btn btn-warning ms-2" onclick="addToCart(${drink.idDrink})">Add to Cart </button>
+                    <!-- Button trigger modal -->
+                    <button type="button" class="btn btn-outline-warning" data-bs-toggle="modal" data-bs-target="#exampleModal_${drink.idDrink}">
+                        Details
+                    </button>
+
+                    <!-- Modal -->
+                    <div class="modal fade text-start" id="exampleModal_${drink.idDrink}" tabindex="-1" aria-labelledby="exampleModalLabel_${drink.idDrink}" aria-hidden="true">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                        <div class="modal-header">
+                            <h1 class="modal-title fs-5" id="exampleModalLabel_${drink.idDrink}">${drink.strDrink}</h1>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                        <img class="card-img-top rounded my-2" src="${drink.strDrinkThumb}" alt="Card image cap">
+                        <h4>Details</h4>
+                        <p> <span class="rounded border p-1 font-weight-bold">Category</span> : ${drink.strCategory}</p>
+                        <p> <span class="rounded border p-1 font-weight-bold">Alcoholic</span> : ${drink.strAlcoholic}</p>
+                        <p> <span class="rounded border p-1 font-weight-bold">Glass</span> : ${drink.strGlass}</p>
+                        <p> <span class="rounded border p-1 font-weight-bold">Instructions</span> : ${drink.strInstructions}</p>
+
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                        </div>
+                        </div>
+                    </div>
+                    </div>
+                    <!-- Modal Ends -->
+
+
+                    <button type="button" class="btn btn-warning ms-2 add-to-cart-btn" >Add to Cart </button>
+
+                   
                 </div>
             </div>
         </div>
         <!-- single item card ends-->
     `
-    }); 
+    });
 
     resultContainer.innerHTML = drinksHTML;
 }
-    
 
-async function showItemDetails(drink_id){
-    try {
-        showLoading();
-        const response = await fetch(`https://www.thecocktaildb.com/api/json/v1/1/lookup.php?i=${drink_id}`);
-        const data = await response.json();
-        console.log(data);
-        // scroool to top
-        window.scrollTo(0, 0);
-        if (data.drinks === null ||data.drinks.length === 0) {
-            showNotFound();
-        }else{
-            resultContainer.innerHTML = `
-            <!-- item details starts -->
-                <div class="col-md-12" id="item-details">
-                <div class="card m-2 p-2">
-                    <img class="card-img-top rounded w-100 object-fit-cover" width="200px" height="300"  src="${data.drinks[0].strDrinkThumb}" alt="Card image cap">
-                    <div class="card-block">
-                    <h4 class="card-title py-2">${data.drinks[0].strDrink}</h4>
-                    <p class="card-text text-muted">${data.drinks[0].strInstructions}</p>
-                    <ul>
-                        <li>${data.drinks[0].strIngredient1 || 'N/A'} : ${data.drinks[0].strMeasure1 || 'N/A'}</li>
-                        <li>${data.drinks[0].strIngredient2 || 'N/A'} : ${data.drinks[0].strMeasure2 || 'N/A'}</li>
-                        <li>${data.drinks[0].strIngredient3 || 'N/A'} : ${data.drinks[0].strMeasure3 || 'N/A'}</li>
-                        <li>${data.drinks[0].strIngredient4 || 'N/A'} : ${data.drinks[0].strMeasure4 || 'N/A'}</li>
-                        <li>${data.drinks[0].strIngredient5 || 'N/A'} : ${data.drinks[0].strMeasure5 || 'N/A'}</li>
-                        <li>${data.drinks[0].strIngredient6 || 'N/A'} : ${data.drinks[0].strMeasure6 || 'N/A'}</li>
-                        <li>${data.drinks[0].strIngredient7 || 'N/A'} : ${data.drinks[0].strMeasure7 || 'N/A'}</li>
-                        <li>${data.drinks[0].strIngredient8 || 'N/A'} : ${data.drinks[0].strMeasure8 || 'N/A'}</li>
-                        <li>${data.drinks[0].strIngredient9 || 'N/A'} : ${data.drinks[0].strMeasure9 || 'N/A'}</li>
-                        <li>${data.drinks[0].strIngredient10 || 'N/A'} : ${data.drinks[0].strMeasure10 || 'N/A'}</li>
-                        <li>${data.drinks[0].strIngredient11 || 'N/A'} : ${data.drinks[0].strMeasure11 || 'N/A'}</li>
-                        <li>${data.drinks[0].strIngredient12 || 'N/A'} : ${data.drinks[0].strMeasure12 || 'N/A'}</li>
-                        <li>${data.drinks[0].strIngredient13 || 'N/A'} : ${data.drinks[0].strMeasure13 || 'N/A'}</li>
-                        <li>${data.drinks[0].strIngredient14 || 'N/A'} : ${data.drinks[0].strMeasure14 || 'N/A'}</li>
-                        <li>${data.drinks[0].strIngredient15 || 'N/A'} : ${data.drinks[0].strMeasure15 || 'N/A'}</li>
-                        <li>${data.drinks[0].strIngredient16 || 'N/A'} : ${data.drinks[0].strMeasure16 || 'N/A'}</li>
-                        <li>${data.drinks[0].strIngredient17 || 'N/A'} : ${data.drinks[0].strMeasure17 || 'N/A'}</li>
-                        <li>${data.drinks[0].strIngredient18 || 'N/A'} : ${data.drinks[0].strMeasure18 || 'N/A'}</li>
-                        <li>${data.drinks[0].strIngredient19 || 'N/A'} : ${data.drinks[0].strMeasure19 || 'N/A'}</li>
-                        <li>${data.drinks[0].strIngredient20 || 'N/A'} : ${data.drinks[0].strMeasure20 || 'N/A'}</li>
-                    </ul>
-                    <div class="my-4">
-                    <iframe
-                        width="100%"
-                        height="400"
-                        src="https://www.youtube.com/embed/${data.meals[0].strYoutube.split("v=")[1]}"
-                        title="YouTube video player"
-                        frameborder="0"
-                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                        allowfullscreen>
-                    </iframe>
-                    </div>
-                    <a href="${data.meals[0].strSource}" class=" d-block w-100 my-2">See source</a>
-                </div>
-                </div>
-            <!-- item details ends -->
-            
-            `;
-        }
-    } catch (error) {
-        showNotFound();
-        console.log(error);
-    }   
-}
+
+// async function showItemDetails(drink_id){
+//     try {
+//         showLoading();
+//         const response = await fetch(`https://www.thecocktaildb.com/api/json/v1/1/lookup.php?i=${drink_id}`);
+//         const data = await response.json();
+//         console.log(data);
+//         // scroool to top
+//         window.scrollTo(0, 0);
+//         if (data.drinks === null ||data.drinks.length === 0) {
+//             showNotFound();
+//         }else{
+//             resultContainer.innerHTML = `
+//             <!-- item details starts -->
+//                 <div class="col-md-12" id="item-details">
+//                 <div class="card m-2 p-2">
+//                     <img class="card-img-top rounded w-100 object-fit-cover" width="200px" height="300"  src="${data.drinks[0].strDrinkThumb}" alt="Card image cap">
+//                     <div class="card-block">
+//                     <h4 class="card-title py-2">${data.drinks[0].strDrink}</h4>
+//                     <p class="card-text text-muted">${data.drinks[0].strInstructions}</p>
+//                     <ul>
+//                         <li>${data.drinks[0].strIngredient1 || 'N/A'} : ${data.drinks[0].strMeasure1 || 'N/A'}</li>
+//                         <li>${data.drinks[0].strIngredient2 || 'N/A'} : ${data.drinks[0].strMeasure2 || 'N/A'}</li>
+//                         <li>${data.drinks[0].strIngredient3 || 'N/A'} : ${data.drinks[0].strMeasure3 || 'N/A'}</li>
+//                         <li>${data.drinks[0].strIngredient4 || 'N/A'} : ${data.drinks[0].strMeasure4 || 'N/A'}</li>
+//                         <li>${data.drinks[0].strIngredient5 || 'N/A'} : ${data.drinks[0].strMeasure5 || 'N/A'}</li>
+//                         <li>${data.drinks[0].strIngredient6 || 'N/A'} : ${data.drinks[0].strMeasure6 || 'N/A'}</li>
+//                         <li>${data.drinks[0].strIngredient7 || 'N/A'} : ${data.drinks[0].strMeasure7 || 'N/A'}</li>
+//                         <li>${data.drinks[0].strIngredient8 || 'N/A'} : ${data.drinks[0].strMeasure8 || 'N/A'}</li>
+//                         <li>${data.drinks[0].strIngredient9 || 'N/A'} : ${data.drinks[0].strMeasure9 || 'N/A'}</li>
+//                         <li>${data.drinks[0].strIngredient10 || 'N/A'} : ${data.drinks[0].strMeasure10 || 'N/A'}</li>
+//                         <li>${data.drinks[0].strIngredient11 || 'N/A'} : ${data.drinks[0].strMeasure11 || 'N/A'}</li>
+//                         <li>${data.drinks[0].strIngredient12 || 'N/A'} : ${data.drinks[0].strMeasure12 || 'N/A'}</li>
+//                         <li>${data.drinks[0].strIngredient13 || 'N/A'} : ${data.drinks[0].strMeasure13 || 'N/A'}</li>
+//                         <li>${data.drinks[0].strIngredient14 || 'N/A'} : ${data.drinks[0].strMeasure14 || 'N/A'}</li>
+//                         <li>${data.drinks[0].strIngredient15 || 'N/A'} : ${data.drinks[0].strMeasure15 || 'N/A'}</li>
+//                         <li>${data.drinks[0].strIngredient16 || 'N/A'} : ${data.drinks[0].strMeasure16 || 'N/A'}</li>
+//                         <li>${data.drinks[0].strIngredient17 || 'N/A'} : ${data.drinks[0].strMeasure17 || 'N/A'}</li>
+//                         <li>${data.drinks[0].strIngredient18 || 'N/A'} : ${data.drinks[0].strMeasure18 || 'N/A'}</li>
+//                         <li>${data.drinks[0].strIngredient19 || 'N/A'} : ${data.drinks[0].strMeasure19 || 'N/A'}</li>
+//                         <li>${data.drinks[0].strIngredient20 || 'N/A'} : ${data.drinks[0].strMeasure20 || 'N/A'}</li>
+//                     </ul>
+//                     <div class="my-4">
+//                     <iframe
+//                         width="100%"
+//                         height="400"
+//                         src="https://www.youtube.com/embed/${data.meals[0].strYoutube.split("v=")[1]}"
+//                         title="YouTube video player"
+//                         frameborder="0"
+//                         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+//                         allowfullscreen>
+//                     </iframe>
+//                     </div>
+//                     <a href="${data.meals[0].strSource}" class=" d-block w-100 my-2">See source</a>
+//                 </div>
+//                 </div>
+//             <!-- item details ends -->
+
+//             `;
+//         }
+//     } catch (error) {
+//         showNotFound();
+//         console.log(error);
+//     }   
+// }
 
 
 

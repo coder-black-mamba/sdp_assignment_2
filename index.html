@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Search</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-4Q6Gf2aSP4eDXB8Miphtr37CMZZQ5oXLH2yaXMJ2w8e2ZtHTl7GptT4jmndRuHDT" crossorigin="anonymous">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: "Lexend", sans-serif;
+
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12 bg-light m-2 rounded p-3 border">
+                <div class="jumbotron">
+                    <h1 class="text-center"><span class="bg-warning p-2 m-2 rounded border">Cocktails 🍹</span></h1>
+                    <form class="form" id="search-form">
+                        <div class="form-group">
+                            <input type="text" class="form-control" id="search" placeholder="Search">
+                        </div>
+                        <button type="submit" class="btn btn-warning d-block w-100 my-2">Search</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-9 ">
+                <div class="row my-3" id="result-container">
+                    <div class="col-md-4 text-center">
+                        <div class="card p-2 mt-4">
+                            <img class="card-img-top rounded" src="https://www.thecocktaildb.com/images/media/drink/m7iaxu1504885119.jpg" alt="Card image cap">
+                            <div class="card-block">
+                                <h4 class="card-title py-2">Kiss me Quick</h4>
+                                <p class="card-text text-muted">Category : Ordinary Drink</p>
+                                <p class="card-text text-muted">mix in the glas...</p>
+                                <button type="button" class="btn btn-outline-warning  " onclick="showItemDetails(15026)">Details </button>
+                                <button type="button" class="btn btn-warning ms-2" onclick="addToCart(15026)">Add to Cart </button>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- single item card starts-->
+                    <div class="col-md-4 text-center">
+                        <div class="card p-2 mt-4">
+                            <img class="card-img-top rounded" src="https://www.thecocktaildb.com/images/media/drink/b4cadp1619695347.jpg" alt="Card image cap">
+                            <div class="card-block">
+                                <h4 class="card-title py-2">Frosé</h4>
+                                <p class="card-text text-muted">Category : Cocktail</p>
+                                <p class="card-text text-muted">Step 1
+            Pour ros...</p>
+                                <button type="button" class="btn btn-outline-warning  " onclick="showItemDetails(178352)">Details </button>
+                                <button type="button" class="btn btn-warning ms-2" onclick="addToCart(178352)">Add to Cart </button>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- single item card ends-->
+                
+                    <!-- single item card starts-->
+                    <div class="col-md-4 text-center">
+                        <div class="card p-2 mt-4">
+                            <img class="card-img-top rounded" src="https://www.thecocktaildb.com/images/media/drink/h5za6y1582477994.jpg" alt="Card image cap">
+                            <div class="card-block">
+                                <h4 class="card-title py-2">Affair</h4>
+                                <p class="card-text text-muted">Category : Ordinary Drink</p>
+                                <p class="card-text text-muted">Pour schnapps, ...</p>
+                                <button type="button" class="btn btn-outline-warning  " onclick="showItemDetails(17839)">Details </button>
+                                <button type="button" class="btn btn-warning ms-2" onclick="addToCart(17839)">Add to Cart </button>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- single item card ends-->
+                
+                    <!-- single item card starts-->
+                    <div class="col-md-4 text-center">
+                        <div class="card p-2 mt-4">
+                            <img class="card-img-top rounded" src="https://www.thecocktaildb.com/images/media/drink/vqwryq1441245927.jpg" alt="Card image cap">
+                            <div class="card-block">
+                                <h4 class="card-title py-2">Frappé</h4>
+                                <p class="card-text text-muted">Category : Coffee / Tea</p>
+                                <p class="card-text text-muted">Mix together. B...</p>
+                                <button type="button" class="btn btn-outline-warning  " onclick="showItemDetails(12768)">Details </button>
+                                <button type="button" class="btn btn-warning ms-2" onclick="addToCart(12768)">Add to Cart </button>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- single item card ends-->
+                
+                    <!-- single item card starts-->
+                    <div class="col-md-4 text-center">
+                        <div class="card p-2 mt-4">
+                            <img class="card-img-top rounded" src="https://www.thecocktaildb.com/images/media/drink/wzdtnn1582477684.jpg" alt="Card image cap">
+                            <div class="card-block">
+                                <h4 class="card-title py-2">Affinity</h4>
+                                <p class="card-text text-muted">Category : Ordinary Drink</p>
+                                <p class="card-text text-muted">In a mixing gla...</p>
+                                <button type="button" class="btn btn-outline-warning  " onclick="showItemDetails(17840)">Details </button>
+                                <button type="button" class="btn btn-warning ms-2" onclick="addToCart(17840)">Add to Cart </button>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- single item card ends-->
+                
+                    <!-- single item card starts-->
+                    <div class="col-md-4 text-center">
+                        <div class="card p-2 mt-4">
+                            <img class="card-img-top rounded" src="https://www.thecocktaildb.com/images/media/drink/drtihp1606768397.jpg" alt="Card image cap">
+                            <div class="card-block">
+                                <h4 class="card-title py-2">Gin Fizz</h4>
+                                <p class="card-text text-muted">Category : Ordinary Drink</p>
+                                <p class="card-text text-muted">Shake all ingre...</p>
+                                <button type="button" class="btn btn-outline-warning  " onclick="showItemDetails(11410)">Details </button>
+                                <button type="button" class="btn btn-warning ms-2" onclick="addToCart(11410)">Add to Cart </button>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- single item card ends-->
+                
+                    <!-- single item card starts-->
+                    <div class="col-md-4 text-center">
+                        <div class="card p-2 mt-4">
+                            <img class="card-img-top rounded" src="https://www.thecocktaildb.com/images/media/drink/xrl66i1493068702.jpg" alt="Card image cap">
+                            <div class="card-block">
+                                <h4 class="card-title py-2">After sex</h4>
+                                <p class="card-text text-muted">Category : Ordinary Drink</p>
+                                <p class="card-text text-muted">Pour the vodka ...</p>
+                                <button type="button" class="btn btn-outline-warning  " onclick="showItemDetails(15182)">Details </button>
+                                <button type="button" class="btn btn-warning ms-2" onclick="addToCart(15182)">Add to Cart </button>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- single item card ends-->
+                
+                    <!-- single item card starts-->
+                    <div class="col-md-4 text-center">
+                        <div class="card p-2 mt-4">
+                            <img class="card-img-top rounded" src="https://www.thecocktaildb.com/images/media/drink/y36z8c1503563911.jpg" alt="Card image cap">
+                            <div class="card-block">
+                                <h4 class="card-title py-2">Downshift</h4>
+                                <p class="card-text text-muted">Category : Punch / Party Drink</p>
+                                <p class="card-text text-muted">Start with the ...</p>
+                                <button type="button" class="btn btn-outline-warning  " onclick="showItemDetails(16991)">Details </button>
+                                <button type="button" class="btn btn-warning ms-2" onclick="addToCart(16991)">Add to Cart </button>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- single item card ends-->
+                
+                    <!-- single item card starts-->
+                    <div class="col-md-4 text-center">
+                        <div class="card p-2 mt-4">
+                            <img class="card-img-top rounded" src="https://www.thecocktaildb.com/images/media/drink/uc63bh1582483589.jpg" alt="Card image cap">
+                            <div class="card-block">
+                                <h4 class="card-title py-2">Dragonfly</h4>
+                                <p class="card-text text-muted">Category : Ordinary Drink</p>
+                                <p class="card-text text-muted">In a highball g...</p>
+                                <button type="button" class="btn btn-outline-warning  " onclick="showItemDetails(11320)">Details </button>
+                                <button type="button" class="btn btn-warning ms-2" onclick="addToCart(11320)">Add to Cart </button>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- single item card ends-->
+                
+                    <!-- single item card starts-->
+                    <div class="col-md-4 text-center">
+                        <div class="card p-2 mt-4">
+                            <img class="card-img-top rounded" src="https://www.thecocktaildb.com/images/media/drink/hrxfbl1606773109.jpg" alt="Card image cap">
+                            <div class="card-block">
+                                <h4 class="card-title py-2">French 75</h4>
+                                <p class="card-text text-muted">Category : Ordinary Drink</p>
+                                <p class="card-text text-muted">Combine gin, su...</p>
+                                <button type="button" class="btn btn-outline-warning  " onclick="showItemDetails(17197)">Details </button>
+                                <button type="button" class="btn btn-warning ms-2" onclick="addToCart(17197)">Add to Cart </button>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- single item card ends-->
+                
+                    <!-- single item card starts-->
+                    <div class="col-md-4 text-center">
+                        <div class="card p-2 mt-4">
+                            <img class="card-img-top rounded" src="https://www.thecocktaildb.com/images/media/drink/7dkf0i1487602928.jpg" alt="Card image cap">
+                            <div class="card-block">
+                                <h4 class="card-title py-2">Autodafé</h4>
+                                <p class="card-text text-muted">Category : Ordinary Drink</p>
+                                <p class="card-text text-muted">Mix and fill up...</p>
+                                <button type="button" class="btn btn-outline-warning  " onclick="showItemDetails(12756)">Details </button>
+                                <button type="button" class="btn btn-warning ms-2" onclick="addToCart(12756)">Add to Cart </button>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- single item card ends-->
+                
+                    <!-- single item card starts-->
+                    <div class="col-md-4 text-center">
+                        <div class="card p-2 mt-4">
+                            <img class="card-img-top rounded" src="https://www.thecocktaildb.com/images/media/drink/r9cz3q1504519844.jpg" alt="Card image cap">
+                            <div class="card-block">
+                                <h4 class="card-title py-2">Foxy Lady</h4>
+                                <p class="card-text text-muted">Category : Ordinary Drink</p>
+                                <p class="card-text text-muted">Shake all ingre...</p>
+                                <button type="button" class="btn btn-outline-warning  " onclick="showItemDetails(11375)">Details </button>
+                                <button type="button" class="btn btn-warning ms-2" onclick="addToCart(11375)">Add to Cart </button>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- single item card ends-->
+                
+                    <!-- single item card starts-->
+                    <div class="col-md-4 text-center">
+                        <div class="card p-2 mt-4">
+                            <img class="card-img-top rounded" src="https://www.thecocktaildb.com/images/media/drink/vuquyv1468876052.jpg" alt="Card image cap">
+                            <div class="card-block">
+                                <h4 class="card-title py-2">Afterglow</h4>
+                                <p class="card-text text-muted">Category : Cocktail</p>
+                                <p class="card-text text-muted">Mix. Serve over...</p>
+                                <button type="button" class="btn btn-outline-warning  " onclick="showItemDetails(12560)">Details </button>
+                                <button type="button" class="btn btn-warning ms-2" onclick="addToCart(12560)">Add to Cart </button>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- single item card ends-->
+                
+                    <!-- single item card starts-->
+                    <div class="col-md-4 text-center">
+                        <div class="card p-2 mt-4">
+                            <img class="card-img-top rounded" src="https://www.thecocktaildb.com/images/media/drink/e5zgao1582582378.jpg" alt="Card image cap">
+                            <div class="card-block">
+                                <h4 class="card-title py-2">Godfather</h4>
+                                <p class="card-text text-muted">Category : Ordinary Drink</p>
+                                <p class="card-text text-muted">Pour all ingred...</p>
+                                <button type="button" class="btn btn-outline-warning  " onclick="showItemDetails(11423)">Details </button>
+                                <button type="button" class="btn btn-warning ms-2" onclick="addToCart(11423)">Add to Cart </button>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- single item card ends-->
+                
+                    <!-- single item card starts-->
+                    <div class="col-md-4 text-center">
+                        <div class="card p-2 mt-4">
+                            <img class="card-img-top rounded" src="https://www.thecocktaildb.com/images/media/drink/vyrurp1472667777.jpg" alt="Card image cap">
+                            <div class="card-block">
+                                <h4 class="card-title py-2">Afternoon</h4>
+                                <p class="card-text text-muted">Category : Coffee / Tea</p>
+                                <p class="card-text text-muted">Build into a su...</p>
+                                <button type="button" class="btn btn-outline-warning  " onclick="showItemDetails(13162)">Details </button>
+                                <button type="button" class="btn btn-warning ms-2" onclick="addToCart(13162)">Add to Cart </button>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- single item card ends-->
+                
+                    <!-- single item card starts-->
+                    <div class="col-md-4 text-center">
+                        <div class="card p-2 mt-4">
+                            <img class="card-img-top rounded" src="https://www.thecocktaildb.com/images/media/drink/vqwptt1441247711.jpg" alt="Card image cap">
+                            <div class="card-block">
+                                <h4 class="card-title py-2">Cafe Savoy</h4>
+                                <p class="card-text text-muted">Category : Coffee / Tea</p>
+                                <p class="card-text text-muted">Fill mug almost...</p>
+                                <button type="button" class="btn btn-outline-warning  " onclick="showItemDetails(14181)">Details </button>
+                                <button type="button" class="btn btn-warning ms-2" onclick="addToCart(14181)">Add to Cart </button>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- single item card ends-->
+                
+                    <!-- single item card starts-->
+                    <div class="col-md-4 text-center">
+                        <div class="card p-2 mt-4">
+                            <img class="card-img-top rounded" src="https://www.thecocktaildb.com/images/media/drink/xwxyux1441254243.jpg" alt="Card image cap">
+                            <div class="card-block">
+                                <h4 class="card-title py-2">Vodka Fizz</h4>
+                                <p class="card-text text-muted">Category : Other / Unknown</p>
+                                <p class="card-text text-muted">Blend all ingre...</p>
+                                <button type="button" class="btn btn-outline-warning  " onclick="showItemDetails(16967)">Details </button>
+                                <button type="button" class="btn btn-warning ms-2" onclick="addToCart(16967)">Add to Cart </button>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- single item card ends-->
+                
+                    <!-- single item card starts-->
+                    <div class="col-md-4 text-center">
+                        <div class="card p-2 mt-4">
+                            <img class="card-img-top rounded" src="https://www.thecocktaildb.com/images/media/drink/sk3lr91493068595.jpg" alt="Card image cap">
+                            <div class="card-block">
+                                <h4 class="card-title py-2">After Five</h4>
+                                <p class="card-text text-muted">Category : Shot</p>
+                                <p class="card-text text-muted">1. Pour Kahlua ...</p>
+                                <button type="button" class="btn btn-outline-warning  " onclick="showItemDetails(13807)">Details </button>
+                                <button type="button" class="btn btn-warning ms-2" onclick="addToCart(13807)">Add to Cart </button>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- single item card ends-->
+                
+                    <!-- single item card starts-->
+                    <div class="col-md-4 text-center">
+                        <div class="card p-2 mt-4">
+                            <img class="card-img-top rounded" src="https://www.thecocktaildb.com/images/media/drink/vaukir1606772580.jpg" alt="Card image cap">
+                            <div class="card-block">
+                                <h4 class="card-title py-2">Angel Face</h4>
+                                <p class="card-text text-muted">Category : Ordinary Drink</p>
+                                <p class="card-text text-muted">Shake all ingre...</p>
+                                <button type="button" class="btn btn-outline-warning  " onclick="showItemDetails(11034)">Details </button>
+                                <button type="button" class="btn btn-warning ms-2" onclick="addToCart(11034)">Add to Cart </button>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- single item card ends-->
+                
+                    <!-- single item card starts-->
+                    <div class="col-md-4 text-center">
+                        <div class="card p-2 mt-4">
+                            <img class="card-img-top rounded" src="https://www.thecocktaildb.com/images/media/drink/wvtwpp1478963454.jpg" alt="Card image cap">
+                            <div class="card-block">
+                                <h4 class="card-title py-2">Quick F**K</h4>
+                                <p class="card-text text-muted">Category : Shot</p>
+                                <p class="card-text text-muted">In a shot glass...</p>
+                                <button type="button" class="btn btn-outline-warning  " onclick="showItemDetails(13198)">Details </button>
+                                <button type="button" class="btn btn-warning ms-2" onclick="addToCart(13198)">Add to Cart </button>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- single item card ends-->
+                
+                    <!-- single item card starts-->
+                    <div class="col-md-4 text-center">
+                        <div class="card p-2 mt-4">
+                            <img class="card-img-top rounded" src="https://www.thecocktaildb.com/images/media/drink/rz5aun1504389701.jpg" alt="Card image cap">
+                            <div class="card-block">
+                                <h4 class="card-title py-2">Brain Fart</h4>
+                                <p class="card-text text-muted">Category : Punch / Party Drink</p>
+                                <p class="card-text text-muted">Mix all ingredi...</p>
+                                <button type="button" class="btn btn-outline-warning  " onclick="showItemDetails(17120)">Details </button>
+                                <button type="button" class="btn btn-warning ms-2" onclick="addToCart(17120)">Add to Cart </button>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- single item card ends-->
+                
+                    <!-- single item card starts-->
+                    <div class="col-md-4 text-center">
+                        <div class="card p-2 mt-4">
+                            <img class="card-img-top rounded" src="https://www.thecocktaildb.com/images/media/drink/64x5j41504351518.jpg" alt="Card image cap">
+                            <div class="card-block">
+                                <h4 class="card-title py-2">Porto flip</h4>
+                                <p class="card-text text-muted">Category : Ordinary Drink</p>
+                                <p class="card-text text-muted">Shake ingredien...</p>
+                                <button type="button" class="btn btn-outline-warning  " onclick="showItemDetails(17192)">Details </button>
+                                <button type="button" class="btn btn-warning ms-2" onclick="addToCart(17192)">Add to Cart </button>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- single item card ends-->
+                
+                    <!-- single item card starts-->
+                    <div class="col-md-4 text-center">
+                        <div class="card p-2 mt-4">
+                            <img class="card-img-top rounded" src="https://www.thecocktaildb.com/images/media/drink/wrh44j1504390609.jpg" alt="Card image cap">
+                            <div class="card-block">
+                                <h4 class="card-title py-2">Royal Fizz</h4>
+                                <p class="card-text text-muted">Category : Ordinary Drink</p>
+                                <p class="card-text text-muted">Shake all ingre...</p>
+                                <button type="button" class="btn btn-outline-warning  " onclick="showItemDetails(12055)">Details </button>
+                                <button type="button" class="btn btn-warning ms-2" onclick="addToCart(12055)">Add to Cart </button>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- single item card ends-->
+                
+                    <!-- single item card starts-->
+                    <div class="col-md-4 text-center">
+                        <div class="card p-2 mt-4">
+                            <img class="card-img-top rounded" src="https://www.thecocktaildb.com/images/media/drink/acuvjz1582482022.jpg" alt="Card image cap">
+                            <div class="card-block">
+                                <h4 class="card-title py-2">Frisco Sour</h4>
+                                <p class="card-text text-muted">Category : Ordinary Drink</p>
+                                <p class="card-text text-muted">Shake all ingre...</p>
+                                <button type="button" class="btn btn-outline-warning  " onclick="showItemDetails(11382)">Details </button>
+                                <button type="button" class="btn btn-warning ms-2" onclick="addToCart(11382)">Add to Cart </button>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- single item card ends-->
+                
+                    <!-- single item card starts-->
+                    <div class="col-md-4 text-center">
+                        <div class="card p-2 mt-4">
+                            <img class="card-img-top rounded" src="https://www.thecocktaildb.com/images/media/drink/ttsvwy1472668781.jpg" alt="Card image cap">
+                            <div class="card-block">
+                                <h4 class="card-title py-2">Arctic Fish</h4>
+                                <p class="card-text text-muted">Category : Punch / Party Drink</p>
+                                <p class="card-text text-muted">Fill glass with...</p>
+                                <button type="button" class="btn btn-outline-warning  " onclick="showItemDetails(14622)">Details </button>
+                                <button type="button" class="btn btn-warning ms-2" onclick="addToCart(14622)">Add to Cart </button>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- single item card ends-->
+                
+                    <!-- single item card starts-->
+                    <div class="col-md-4 text-center">
+                        <div class="card p-2 mt-4">
+                            <img class="card-img-top rounded" src="https://www.thecocktaildb.com/images/media/drink/q0fg2m1484430704.jpg" alt="Card image cap">
+                            <div class="card-block">
+                                <h4 class="card-title py-2">Fruit Shake</h4>
+                                <p class="card-text text-muted">Category : Other / Unknown</p>
+                                <p class="card-text text-muted">Blend til smoot...</p>
+                                <button type="button" class="btn btn-outline-warning  " onclick="showItemDetails(12674)">Details </button>
+                                <button type="button" class="btn btn-warning ms-2" onclick="addToCart(12674)">Add to Cart </button>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- single item card ends-->
+                </div>
+            </div>
+            <div class="col-md-3  p-3">
+                <h2>Total Cart : <span id="total-cart-items">0</span></h2>
+                <hr>
+                <table class="table" id="cart-table">
+                    <tr class="table-header">
+                        <th>SL</th>
+                        <th>IMG</th>
+                        <th>Item Name</th>
+                    </tr>
+                    <tr class="cart-item">
+                        <td>1</td>
+                        <td class="text-center vertical-align-middle"><img class="rounded-circle" width="50px" height="50px" src="https://www.thecocktaildb.com/images/media/drink/wvtwpp1478963454.jpg" alt=""></td>
+                        <td class="vertical-align-middle">Quick F**K</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+       
+        <div class="py-5 my-5"></div>
+        <div class="py-5 my-5"></div>
+        <div class="py-5 my-5"></div>
+        <div class="py-5 my-5"></div>
+        <div class="py-5 my-5"></div>
+        <div class="py-5 my-5"></div>
+
+        <footer class="pt-5 mt-5">
+            <p class="text-center text-muted mt-5   p-2 bg-light ">© 2025 Abu Sayed. All rights reserved.</p>
+        </footer>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js" integrity="sha384-j1CDi7MgGQ12Z7Qab0qlWQ/Qqz24Gc6BM0thvEMVjHnfYGF0rmFCozFSxQBxwHKO" crossorigin="anonymous"></script>
+        <script src="./main.js"></script>
+</body>
+
+</html>

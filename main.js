@@ -6,6 +6,22 @@ const cartTable = document.getElementById('cart-table');
 
 const cartItems = [];
 
+
+window.onload =async () => {
+    showLoading();
+    try{
+        const response = await fetch(`https://www.thecocktaildb.com/api/json/v1/1/search.php?f=a`);
+        const data = await response.json();
+        console.log(data);
+        showSearchResult(data.drinks);
+
+    }catch(error){
+        showNotFound()
+        console.log(error);
+    }
+}
+
+
 searchForm.addEventListener('submit', (e) => {
     e.preventDefault();
     const searchTerm = searchInput.value.trim();
